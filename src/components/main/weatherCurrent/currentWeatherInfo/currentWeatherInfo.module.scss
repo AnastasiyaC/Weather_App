@@ -1,0 +1,53 @@
+.weather {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    &__temperature {
+        display: flex;
+        align-items: flex-start;
+        font: {
+            style: normal;
+            weight: bold;
+            size: 200px;
+        }
+        text-transform: uppercase;
+
+        &__number {
+            font-size: 1em;
+        }
+
+        &__degree {
+            font-size: 0.6em;
+        }
+    }
+
+    &__iconContainer {
+        height: 158px;
+        width: 208px;
+        margin-left: -18px;
+        margin-top: -20px;
+    }
+    &__icon {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__description {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        font: {
+            style: normal;
+            weight: bold;
+            size: 22px;
+        }
+        word-wrap: normal;
+        margin: 0 0 40px -10px;
+        line-height: 30px;
+        text-transform: uppercase;
+
+        &__lowercase {
+            text-transform: lowercase;
+        }
+    }
+}

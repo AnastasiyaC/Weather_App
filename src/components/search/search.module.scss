@@ -1,0 +1,67 @@
+@import "../../styles/variables";
+
+%form {
+    height: 44px;
+    font-family: $font;
+    color: $fontColor;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    align-items: center;
+    transition: all 0.5s linear;
+}
+
+.form {
+    display: flex;
+    box-shadow: 2px 2px 4px 0 rgba(34, 60, 80, 0.2);
+
+    &__inputSearch {
+        @extend %form;
+        width: 274px;
+        font: {
+            weight: normal;
+            style: normal;
+            size: 16px;
+            feature-settings: 'cpsp' on;
+        }
+        line-height: 17px;
+        display: flex;
+        background-color: $buttonColorLight;
+        border-right: none;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        &:hover {
+            background-color: $buttonColorLight-hover;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-right: none;
+        }
+        &:active {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    &__buttonSearch {
+        @extend %form;
+        font: {
+            weight: bold;
+            style: normal;
+            size: 14px;
+            feature-settings: 'cpsp' on;
+        }
+        text-transform: uppercase;
+        width: 101px;
+        background-color: $buttonColorDark;
+        border-left: none;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        &:hover {
+            background-color: $buttonColorDark-hover;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-left: none;
+        }
+        &:active {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+        }
+    }
+}

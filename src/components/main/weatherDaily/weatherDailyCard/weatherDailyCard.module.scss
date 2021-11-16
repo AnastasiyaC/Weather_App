@@ -1,0 +1,36 @@
+.weatherCard {
+    &__weekDay {
+        display: block;
+        font: {
+            style: normal;
+            weight: bold;
+            size: 22px;
+        }
+        line-height: 27px;
+        text-transform: uppercase;
+    }
+
+    &__temperature {
+        font: {
+            style: normal;
+            weight: 600;
+            size: 80px;
+        }
+        line-height: 98px;
+        text-transform: uppercase;
+    }
+
+    &__iconContainer {
+        display: inline-block;
+        width: 66px;
+        height: 52px;
+        margin-bottom: 7%;
+        overflow: visible;
+    }
+
+    &__icon {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

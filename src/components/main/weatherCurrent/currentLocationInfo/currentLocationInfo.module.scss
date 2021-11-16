@@ -1,0 +1,24 @@
+.currentLocation {
+    &__place {
+        font: {
+            style: normal;
+            weight: bold;
+            size: 44px;
+        }
+        line-height: 54px;
+        text-transform: uppercase;
+    }
+
+    &__dateInfo {
+        font: {
+            style: normal;
+            weight: 600;
+            size: 24px;
+        }
+        line-height: 29px;
+
+        &__time {
+            margin-left: 18px;
+        }
+    }
+}

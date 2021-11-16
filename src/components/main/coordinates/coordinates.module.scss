@@ -1,0 +1,15 @@
+.coordinates {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    &__coord {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: right;
+        text-transform: capitalize;
+    }
+}
+
+

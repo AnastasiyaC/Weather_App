@@ -1,0 +1,18 @@
+.header {
+    width: 100%;
+  //font-size: calc(10px + 2vmin);
+    &__title {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+    }
+
+    &__controll {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+}

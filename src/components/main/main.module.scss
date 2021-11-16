@@ -1,0 +1,17 @@
+.main {
+    height: calc(100% - 40px);
+    width: 100%;
+    position: relative;
+    &__weather {
+        width: 50%;
+        height: calc(100% - 54px);
+        position: absolute;
+        top: 54px;
+    }
+    &__location {
+        width: 375px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,114 @@
+@import "../../styles/variables";
+
+%button {
+    font-family: $font;
+    color: $fontColor;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    height: 44px;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 2px 2px 4px 0 rgba(34, 60, 80, 0.2);
+    transition: all 0.5s linear;
+}
+
+%hover-active {
+    box-shadow: 2px 2px 4px 0 rgba(34, 60, 80, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+    display: flex;
+
+    &__buttonUpdate {
+        @extend %button;
+        background-color: $buttonColorDark;
+        width: 44px;
+        position: relative;
+        background-image: url("../../assets/Vector.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        &:after {
+            height: 8px;
+            width: 8px;
+            border-radius: 5px;
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            background: transparent;
+        }
+        &:hover {
+            @extend %hover-active;
+            background-color: $buttonColorDark-hover;
+        }
+        &:active {
+            border: 2px solid black;
+            &::after {
+                background: rgba(23, 217, 23, 0.8);
+            }
+        }
+    }
+
+    &__buttonLanguage {
+        @extend %button;
+        background-color: $buttonColorDark;
+        margin-left: 10px;
+        padding: 0 10px;
+        width: 71px;
+        font: {
+            style: normal;
+            weight: bold;
+            size: 14px;
+        }
+        line-height: 17px;
+        text-transform: uppercase;
+        &:hover {
+            @extend %hover-active;
+            background-color: $buttonColorDark-hover;
+        }
+    }
+    &__buttonDegree {
+        @extend %button;
+        width: 44px;
+        background-color: $buttonColorLight;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        &:hover {
+            background-color: $buttonColorLight-hover;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 2px 4px 0 rgba(34, 60, 80, 0.4);
+        }
+    }
+    &__buttonDegreeF {
+        margin-left: 10px;
+        border-right: none;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &__buttonDegreeC {
+        border-left: none;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    &__buttonDegreeActive {
+        @extend %button;
+        background-color: $buttonColorDark;
+        &:hover {
+            @extend %hover-active;
+            background-color: $buttonColorDark-hover;
+        }
+    }
+}
+
