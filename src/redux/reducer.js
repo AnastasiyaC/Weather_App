@@ -10,16 +10,10 @@ const SET_COORDINATES = 'SET_COORDINATES';
 const SET_LANGUAGE = 'SET_LANGUAGE';
 const UPDATE_BACKGROUND_IMAGE = 'UPDATE_BACKGROUND_IMAGE';
 const SET_CITY_NAME = 'SET_CITY_NAME';
-const SET_COUNTRY_NAME = 'SET_COUNTRY_NAME';
 
 let initialState = {
     current: {
-        timezone: null,
         timezone_offset: null,
-        currentCity: null,
-        currentCountry: null,
-        currentDate: null,
-        currentTime: null,
         temperature: null,
         icon: null,
         description: {
@@ -55,11 +49,7 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 current: {
                     ...state.current,
-                    timezone: action.data.timezone,
                     timezone_offset: action.data.timezone_offset,
-                    // dt: action.data.current.dt,
-                    // currentDate: showDate(action.data.timezone_offset, state.control.language),
-                    // currentTime: null,
                     temperature: Math.round(action.data.current.temp),
                     icon: action.data.current.weather[0].icon,
                     description: {
@@ -73,7 +63,6 @@ export const reducer = (state = initialState, action) => {
                 daily: state.daily.map((el, i) => {
                         return {
                             ...el,
-                            // weekDay: showWeekDay(action.data.timezone_offset, i + 1, state.control.language),
                             temperature: Math.round((action.data.daily[i + 1].temp.min + action.data.daily[i + 1].temp.max) / 2),
                             icon: action.data.daily[i + 1].weather[0].icon,
                         }
@@ -91,15 +80,6 @@ export const reducer = (state = initialState, action) => {
                 current: {
                     ...state.current,
                     currentCity: action.name,
-                }
-            }
-
-        case SET_COUNTRY_NAME:
-            return {
-                ...state,
-                current: {
-                    ...state.current,
-                    currentCountry: action.name,
                 }
             }
 
@@ -209,7 +189,6 @@ export const setCoordinates = (coord) => ({type: SET_COORDINATES, coord});
 export const setLanguage = (language) => ({type: SET_LANGUAGE, language});
 export const updateBackgroundImage = (image) => ({type: UPDATE_BACKGROUND_IMAGE, image});
 export const setWeekDays = () => ({type: SET_WEEK_DAYS});
-export const setCityName = (name) => ({type: SET_CITY_NAME}, name);
-export const setCountryName = (name) => ({type: SET_COUNTRY_NAME}, name);
+export const setCityName = (name) => ({type: SET_CITY_NAME, name});
 
 

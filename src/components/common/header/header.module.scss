@@ -1,6 +1,7 @@
 .header {
-    width: 100%;
-  //font-size: calc(10px + 2vmin);
+  height: 44px;
+  width: 100%;
+  overflow: visible;
     &__title {
       position: absolute;
       clip: rect(0 0 0 0);

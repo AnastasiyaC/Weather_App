@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import classes from "./search.module.scss";
 import { useDispatch, useSelector } from 'react-redux';
 import { setWeather, updateSearchValue } from "../../redux/reducer";
@@ -29,12 +29,10 @@ function Search() {
                 getWeather(units, coord, language)
                     .then( (res) => {
                         dispatch(setWeather(res.data));
-                        console.log('response:', res.data);
                     })
-
-            }).catch( (error) => {
-                console.log('city not found:', error.message);
-                setMessage('city not found');
+            }).catch( (err) => {
+                console.log('city not found:', err.message);
+                setMessage( 'city not found' );
             });
             dispatch(updateSearchValue(''));
         }
@@ -71,7 +69,7 @@ function Search() {
                    value={ languages[language].search }
                    className={ classes.form__buttonSearch }
                    onClick={ onBtnSearchClick }/>
-            <div>
+            <div className={ classes.form__message }>
                 <Message message={ message }/>
             </div>
         </form>

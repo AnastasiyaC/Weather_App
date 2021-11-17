@@ -17,21 +17,4 @@ export const languages = {
         wind: 'ветер',
         humidity: 'влажность',
     },
-
-    // clouds: '',
-    // thunderstorm: '',
-    // drizzle: '',
-    // Rain
-    // Snow
-    // Mist
-    // Smoke
-    // Haze
-    // Dust
-    // Fog
-    // Sand
-    // Dust
-    // Ash
-    // Squall
-    // Tornado
-    // Clear
 }
