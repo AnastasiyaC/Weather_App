@@ -33,8 +33,10 @@ export function showTime(offset) {
 export function showWeekDay(offset, n, language) {
     const currentD = getDateWithOffset(offset)
     const d = new Date(currentD);
+    const i = d.getDay();
+    const index = i + n > 6 ? (i + n - 7) : i + n
 
-    return language === 'en' ? weekEn[d.getDay() + n] : weekRu[d.getDay() + n];
+    return language === 'en' ? weekEn[index] : weekRu[index];
 }
 
 function getDateWithOffset(offset) {
