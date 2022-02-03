@@ -1,6 +1,6 @@
 import * as axios from "axios";
 
-const BASE_URL_V1 = 'http://api.openweathermap.org/geo/1.0';
+const BASE_URL_V1 = 'https://api.openweathermap.org/geo/1.0';
 const BASE_URL_V2 = 'https://api.openweathermap.org/data/2.5/';
 const API_KEY = 'c487374f07c062b5214ed35f57e15349';
 
