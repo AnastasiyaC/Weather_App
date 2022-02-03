@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import classes from "./map.module.css";
 import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { useSelector } from "react-redux";
