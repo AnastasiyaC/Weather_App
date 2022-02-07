@@ -9,3 +9,55 @@ $buttonColorLight: rgba(174, 181, 185, 0.5);
 $buttonColorDark: rgba(76, 82, 85, 0.5);
 $buttonColorLight-hover: rgba(174, 181, 185, 0.7);
 $buttonColorDark-hover: rgba(76, 82, 85, 0.7);
+
+//sizes
+$wrapperWidth: 1200px;
+
+//sizes-header
+$searchBarWidth: 375px;
+$buttonsHeight: 44px;
+
+//mixins
+@mixin height-width($height, $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin image-cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@mixin font-style($size, $weight, $text-transform) {
+  font: {
+    style: normal;
+    size: $size;
+    weight: $weight;
+  }
+  text-transform: $text-transform;
+}
+
+//media
+@mixin _1280 {
+  @media screen and (max-width: 1280px){
+    @content;
+  }
+}
+@mixin _1024 {
+  @media screen and (max-width: 1024px){
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media screen and (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin _480 {
+  @media screen and (max-width: 480px){
+    @content;
+  }
+}

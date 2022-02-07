@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classes from "./map.module.scss";
 import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { useSelector } from "react-redux";
@@ -26,8 +27,8 @@ function Map() {
         latitude: 0,
         longitude: 0,
         zoom: 9,
-        width: "375px",
-        height: "375px",
+        width: "100%",
+        height: "100%",
     });
 
     useEffect( () => {
@@ -47,6 +48,7 @@ function Map() {
     }, [map, language]);
 
     return (
+        <div className={classes.map}>
             <ReactMapGL
                 mapboxApiAccessToken = {'pk.eyJ1IjoiYW5hc3Rhc2l5YWNoZSIsImEiOiJja3Zqbml4ZGQwaTh0MnhuMWtieTl0c2VsIn0.Yyp5pw0RtGvHLlxaUXtWdg'}
                 mapStyle = "mapbox://styles/mapbox/streets-v11"
@@ -55,6 +57,7 @@ function Map() {
                 onLoad={ el => setMap(el.target) }
             >
             </ReactMapGL>
+        </div>
     );
 }
 

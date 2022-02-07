@@ -1,14 +1,17 @@
+@import "src/styles/variables";
+
 .coordinates {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     &__coord {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
+        @include font-style(20px, 600, capitalize);
         line-height: 30px;
         text-align: right;
-        text-transform: capitalize;
+        @include _1280 {
+            @include font-style(18px, 600, capitalize);
+            line-height: 22px;
+        }
     }
 }
 

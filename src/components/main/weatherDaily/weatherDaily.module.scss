@@ -1,8 +1,10 @@
+@import "src/styles/variables";
+
 .weatherDaily {
-    height: 120px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    position: absolute;
-    bottom: 0;
+    @include _768 {
+        justify-items: center;
+    }
 }

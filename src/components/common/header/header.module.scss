@@ -1,7 +1,12 @@
+@import "src/styles/variables";
+
 .header {
-  height: 44px;
+  height: $buttonsHeight;
   width: 100%;
   overflow: visible;
+  @include _768 {
+    height: 154px;
+  }
     &__title {
       position: absolute;
       clip: rect(0 0 0 0);
@@ -9,11 +14,13 @@
       height: 1px;
       margin: -1px;
     }
-
     &__controll {
       height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @include _768 {
+        flex-direction: column;
+      }
     }
 }

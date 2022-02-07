@@ -1,51 +1,67 @@
+@import "src/styles/variables";
+
 .weather {
     width: 100%;
     margin-top: 20px;
     display: flex;
+    @include _768 {
+        justify-content: center;
+    }
     &__temperature {
         display: flex;
         align-items: flex-start;
-        font: {
-            style: normal;
-            weight: bold;
-            size: 200px;
+        @include font-style(200px, bold, uppercase);
+        @include _1280 {
+            @include font-style(174px, bold, uppercase);
         }
-        text-transform: uppercase;
-
+        @include _1024 {
+            @include font-style(138px, bold, uppercase);
+        }
+        @include _480 {
+            @include font-style(92px, bold, uppercase);
+        }
         &__number {
             font-size: 1em;
         }
-
         &__degree {
             font-size: 0.6em;
         }
     }
-
     &__iconContainer {
-        height: 158px;
-        width: 208px;
+        @include height-width(158px, 208px);
         margin-left: -18px;
         margin-top: -20px;
+        @include _1280 {
+            @include height-width(142px, 180px);
+        }
+        @include _1024 {
+            @include height-width(111px, 146px);
+        }
+        @include _480 {
+            @include height-width(79px, 104px);
+        }
     }
     &__icon {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+        @include image-cover;
     }
     &__description {
         display: flex;
         flex-direction: column;
         align-self: flex-end;
-        font: {
-            style: normal;
-            weight: bold;
-            size: 22px;
-        }
+        @include font-style(22px, bold, uppercase);
         word-wrap: normal;
         margin: 0 0 40px -10px;
         line-height: 30px;
-        text-transform: uppercase;
-
+        @include _1280 {
+            @include font-style(18px, bold, uppercase);
+        }
+        @include _1024 {
+            @include font-style(14px, bold, uppercase);
+            line-height: 22px;
+        }
+        @include _480 {
+            margin: 0 0 40px 0;
+        }
         &__lowercase {
             text-transform: lowercase;
         }

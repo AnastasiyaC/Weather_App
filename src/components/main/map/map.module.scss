@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.map {
+  @include height-width($searchBarWidth, $searchBarWidth);
+  background-color: rgba(250, 235, 215, 0.29);
+  border-radius: 5%;
+  position: relative;
+  overflow: hidden;
+  @include _1280 {
+    @include height-width(335px, 335px);
+  }
+  @include _1024 {
+    @include height-width(232px, 232px);
+  }
+}

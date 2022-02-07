@@ -1,17 +1,43 @@
+@import "src/styles/variables";
+
 .main {
     height: calc(100% - 40px);
     width: 100%;
     position: relative;
+    @include _1024 {
+        height: 90%;
+    }
+    @include _768 {
+        height: calc(100% - 154px);
+    }
     &__weather {
-        width: 50%;
-        height: calc(100% - 54px);
+        width: 55%;
         position: absolute;
-        top: 54px;
+        bottom: 0;
+        @include _1280 {
+            width: 60%;
+            bottom: 50%;
+            transform: translateY(calc(50% + 20px));
+        }
+        @include _1024 {
+            width: 66%;
+        }
+        @include _768 {
+            width: 100%;
+            top: 30px;
+            transform: translateY(0);
+        }
     }
     &__location {
-        width: 375px;
         position: absolute;
         bottom: 0;
         right: 0;
+        @include _1280 {
+            bottom: 50%;
+            transform: translateY(calc(50% + 20px));
+        }
+        @include _768 {
+            display: none;
+        }
     }
 }

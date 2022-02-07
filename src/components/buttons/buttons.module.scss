@@ -1,14 +1,8 @@
-@import "../../styles/variables";
+@import "src/styles/variables";
 
-%button {
+@mixin button-style {
     font-family: $font;
     color: $fontColor;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    text-transform: uppercase;
-    height: 44px;
     padding: 0;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -18,18 +12,19 @@
     transition: all 0.5s linear;
 }
 
-%hover-active {
+@mixin hover-active {
     box-shadow: 2px 2px 4px 0 rgba(34, 60, 80, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .buttons {
     display: flex;
-
+    height: $buttonsHeight;
+    @include font-style(14px, bold, uppercase);
     &__buttonUpdate {
-        @extend %button;
+        @include button-style;
         background-color: $buttonColorDark;
-        width: 44px;
+        width: $buttonsHeight;
         position: relative;
         background-image: url("../../assets/update_icon.png");
         background-repeat: no-repeat;
@@ -45,7 +40,7 @@
             background: transparent;
         }
         &:hover {
-            @extend %hover-active;
+            @include hover-active;
             background-color: $buttonColorDark-hover;
         }
         &:active {
@@ -55,9 +50,8 @@
             }
         }
     }
-
     &__buttonLanguage {
-        @extend %button;
+        @include button-style;
         background-color: $buttonColorDark;
         margin-left: 10px;
         padding: 0 10px;
@@ -70,19 +64,16 @@
         line-height: 17px;
         text-transform: uppercase;
         &:hover {
-            @extend %hover-active;
+            @include hover-active;
             background-color: $buttonColorDark-hover;
         }
     }
     &__buttonDegree {
-        @extend %button;
-        width: 44px;
+        @include button-style;
+        width: $buttonsHeight;
         background-color: $buttonColorLight;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
+        @include font-style(14px, bold, uppercase);
         line-height: 17px;
-        text-transform: uppercase;
         &:hover {
             background-color: $buttonColorLight-hover;
             border: 1px solid rgba(0, 0, 0, 0.5);
@@ -95,18 +86,15 @@
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
     }
-
     &__buttonDegreeC {
         border-left: none;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
     }
-
     &__buttonDegreeActive {
-        @extend %button;
         background-color: $buttonColorDark;
         &:hover {
-            @extend %hover-active;
+            @include hover-active;
             background-color: $buttonColorDark-hover;
         }
     }

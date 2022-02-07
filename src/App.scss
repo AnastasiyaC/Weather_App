@@ -1,16 +1,30 @@
+@import "styles/variables";
+
 .app {
-  height: 100vh;
-  width: 100vw;
+  @include height-width(100vh, 100vw);
   background: linear-gradient(180deg, rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%);
   position: relative;
   overflow: hidden;
   &__wrapper {
     height: calc(100% - 140px);
-    width: calc(100% - 180px);
+    width: $wrapperWidth;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include _1280 {
+      width: 940px;
+    }
+    @include _1024 {
+      height: 90%;
+      width: 720px;
+    }
+    @include _768 {
+      width: 460px;
+    }
+    @include _480 {
+      width: 350px;
+    }
   }
 }
 

@@ -1,36 +1,47 @@
+@import "src/styles/variables";
+
 .weatherCard {
     &__weekDay {
         display: block;
-        font: {
-            style: normal;
-            weight: bold;
-            size: 22px;
+        @include font-style(22px, bold, uppercase);
+        @include _1024 {
+            @include font-style(18px, bold, uppercase);
         }
-        line-height: 27px;
-        text-transform: uppercase;
+        @include _768 {
+            text-align: center;
+        }
+        @include _480 {
+            @include font-style(14px, bold, uppercase);
+        }
     }
-
     &__temperature {
-        font: {
-            style: normal;
-            weight: 600;
-            size: 80px;
+        @include font-style(80px, 600, uppercase);
+        @include _1280 {
+            @include font-style(68px, 600, uppercase);
         }
-        line-height: 98px;
-        text-transform: uppercase;
+        @include _1024 {
+            @include font-style(52px, 600, uppercase);
+        }
+        @include _480 {
+            @include font-style(38px, 600, uppercase);
+        }
     }
-
     &__iconContainer {
         display: inline-block;
-        width: 66px;
-        height: 52px;
+        @include height-width(66px, 52px);
         margin-bottom: 7%;
         overflow: visible;
+        @include _1280 {
+            @include height-width(60px, 47px);
+        }
+        @include _1024 {
+            @include height-width(54px, 41px);
+        }
+        @include _480 {
+            @include height-width(39px, 41px);
+        }
     }
-
     &__icon {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+        @include image-cover;
     }
 }
